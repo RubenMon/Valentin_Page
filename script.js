@@ -27,9 +27,9 @@ noButton.addEventListener("click", function () {
 });
 
 function handleYesClick() {
-  titleElement.innerHTML = "Lo sabía, te amo muchisimo";
-  buttonsContainer.classList.add("hidden");
-  changeImage("Si");
+  titleElement.innerHTML = "Lo sabía, te amo muchisimo";  // Cambio de título
+  buttonsContainer.classList.add("hidden");  // Ocultar los botones
+  changeImage("Si");  // Cambiar la imagen cuando se hace clic en "Sí"
 }
 
 function resizeYesButton() {
@@ -55,7 +55,11 @@ function generateMessage(noCount) {
 }
 
 function changeImage(image) {
-  catImg.src = `img/cat-${image}.jpg`;
+  if (image === "Si") {
+    catImg.src = "img/cat-si.jpg";  // Asegúrate de que esta imagen exista en tu carpeta
+  } else {
+    catImg.src = `img/cat-${image}.jpg`;
+  }
 }
 
 function updateNoButtonText() {
